@@ -34,7 +34,7 @@ for k = 1:max
         pause(0.1)
     end
 end
-imboxfilt(V);
+V = imboxfilt(V);
 [Ex, Ey] = gradient(V);
 
 figure
