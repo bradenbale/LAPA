@@ -18,7 +18,7 @@ for k = 1:max
                 V(i,j) = SidesToZero;
             elseif j == 1
 %                 V(i,j) = (V(i, j + 1) + V(i + 1, j) + V(i - 1, 1)) * 0.3333333333;
-                C(i, j) = 0;
+                V(i, j) = 0;
             elseif j == ny
                 V(i,j) = (V(i, j - 1) + V(i + 1, j) + V(i - 1, j)) * 0.3333333333;
             else
@@ -34,7 +34,7 @@ for k = 1:max
         pause(0.1)
     end
 end
-
+imboxfilt(V);
 [Ex, Ey] = gradient(V);
 
 figure
